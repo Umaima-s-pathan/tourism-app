@@ -1,8 +1,9 @@
+# This is a comment to force reinstallation
 streamlit==1.35.0
 plotly==5.10.0
 folium==0.19.5
 streamlit-folium==0.25.0
-geopandas==0.10.2 
+geopandas==1.0.1
 geopy==2.4.1
-pandas==1.5.3 
+pandas==1.5.3
 numpy==1.23.5

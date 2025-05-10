@@ -36,7 +36,7 @@ st.subheader("\U0001F3A8 Art & Culture Explorer")
 
 # ----------------- Art & Culture Explorer ------------------
 st.subheader("\U0001F3A8 Art & Culture Explorer")
-art_data = pd.read_csv("art_forms.csv")
+art_data = pd.read_csv("data/art_forms.csv")
 if selected_state != "All":
     art_data = art_data[art_data['State'] == selected_state]
 if selected_art != "All":
@@ -49,20 +49,20 @@ for _, row in art_data.iterrows():
 
 # ----------------- Cultural Hotspot Dashboard ------------------
 st.subheader("\U0001F5FA Cultural Hotspot Dashboard")
-tourism_df = pd.read_csv("tourism_trends.csv")
+tourism_df = pd.read_csv("data/tourism_trends.csv")
 fig = px.line(tourism_df, x='Year', y='TouristCount', color='Region', title='Annual Tourism Trends by Region')
 st.plotly_chart(fig, use_container_width=True)
 
 # Monthly seasonality chart
 st.write("### Monthly Tourist Seasonality")
-monthly_df = pd.read_csv("monthly_seasonality.csv")
+monthly_df = pd.read_csv("data/monthly_seasonality.csv")
 fig2 = px.bar(monthly_df, x='Month', y='TouristCount', color='Region', barmode='group',
               title='Monthly Tourist Trends Across Regions')
 st.plotly_chart(fig2, use_container_width=True)
 
 # Map
 st.write("### Cultural Hotspot Map")
-map_df = pd.read_csv("hotspot_locations.csv")
+map_df = pd.read_csv("data/hotspot_locations.csv")
 m = folium.Map(location=[22.5937, 78.9629], zoom_start=5)
 for _, row in map_df.iterrows():
     folium.Marker(
@@ -74,7 +74,7 @@ st_folium(m, width=700)
 
 # ----------------- Hidden Cultural Gems ------------------
 st.subheader("\U0001F3F0 Hidden Cultural Gems")
-hidden_gems = pd.read_csv("hidden_gems.csv")
+hidden_gems = pd.read_csv("data/hidden_gems.csv")
 for _, row in hidden_gems.iterrows():
     with st.expander(f"{row['Place']} - {row['State']}"):
         st.image(row['ImageURL'], width=300)
@@ -84,7 +84,7 @@ for _, row in hidden_gems.iterrows():
 
 # ----------------- Government Schemes & Support ------------------
 st.subheader("\U0001F4CA Government Schemes & Support")
-gov_data = pd.read_csv("government_schemes.csv")
+gov_data = pd.read_csv("data/government_schemes.csv")
 st.dataframe(gov_data)
 
 # ----------------- Promote Responsible Tourism ------------------

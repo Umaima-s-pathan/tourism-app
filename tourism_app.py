@@ -100,7 +100,7 @@ if not map_df.empty:
             popup=f"{row['PLACE']} ({row['STATE']})",
             tooltip=row['PLACE']
         ).add_to(m)
-    folium_static(m, width=700,height=500)
+    st_folium(m, width=700, height=500)
 # ----------------- Hidden Cultural Gems ------------------
 st.subheader("\U0001F3F0 Hidden Cultural Gems")
 hidden_gems = load_data_from_snowflake("SELECT PLACE, STATE, IMAGEURL, DESCRIPTION, CHALLENGES, UNTOUCHEDREASON FROM HIDDEN_GEMS")

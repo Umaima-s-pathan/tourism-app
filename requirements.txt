@@ -6,3 +6,4 @@ geopandas
 geopy
 pandas
 numpy
+snowflake-connector-python

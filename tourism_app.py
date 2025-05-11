@@ -49,7 +49,7 @@ def load_data_from_snowflake(query):
 
 # ----------------- Sidebar Filters ------------------
 st.sidebar.title("Filters")
-selected_state = st.sidebar.selectbox("Select a State", ["All", "Rajasthan", "Kerala", "West Bengal", "Tamil Nadu"])
+selected_state = st.sidebar.selectbox("Select a State", ["All", "Kerala", "West Bengal", "Maharashtra", "Tamil Nadu"])
 selected_art = st.sidebar.selectbox("Select Art Form", ["All", "Kathakali", "Madhubani", "Warli", "Chhau"])
 
 # ----------------- Art & Culture Explorer ------------------

@@ -89,16 +89,7 @@ if not monthly_df.empty:
   st.plotly_chart(fig2, use_container_width=True)
 
 # ----------------- Map ----------------
-st.markdown(
-    """
-    <style>
-    iframe[title="streamlit_folium.st_folium"] {
-        height: 500px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+with st.container():
 st.write("### Cultural Hotspot Map")
 map_df = load_data_from_snowflake("SELECT PLACE, STATE, LATITUDE, LONGITUDE FROM HOTSPOT_LOCATIONS")
 if not map_df.empty:

@@ -56,22 +56,22 @@ selected_art = st.sidebar.selectbox("Select Art Form", ["All", "Kathakali", "Mad
 st.subheader("\U0001F3A8 Art & Culture Explorer")
 
 # Fetch data from Snowflake
-art_data = load_data_from_snowflake("SELECT ArtForm, State, ImageURL, Description FROM ART_FORMS")
+art_data = load_data_from_snowflake("SELECT ARTFORM, STATE, IMAGEURL, DESCRIPTION FROM ART_FORMS")
 
 if art_data.empty:
     st.warning("No data available for Art Forms.")
 else:
     # Apply filters
     if selected_state != "All":
-        art_data = art_data[art_data['State'] == selected_state]
+        art_data = art_data[art_data['STATE'] == selected_state]
     if selected_art != "All":
-        art_data = art_data[art_data['ArtForm'] == selected_art]
+        art_data = art_data[art_data['ARTFORM'] == selected_art]
 
     # Display the data
     for _, row in art_data.iterrows():
-        with st.expander(f"{row['ArtForm']} - {row['State']}"):
-            st.image(row['ImageURL'], width=300)
-            st.write(row['Description'])
+        with st.expander(f"{row['ARTFORM']} - {row['STATE']}"):
+            st.image(row['IMAGEURL'], width=300)
+            st.write(row['DESCRIPTION'])
 
 # ----------------- Cultural Hotspot Dashboard ------------------
 st.subheader("\U0001F5FA Cultural Hotspot Dashboard")

@@ -127,12 +127,8 @@ st.markdown("""
 - Spread awareness and educate others
 """)
 
-# ----------------- Promote Responsible Tourism ------------------
-st.subheader("\U0001F4AA Promote Responsible Tourism")
+# ----------------- Data Source Info ------------------
 st.markdown("""
-- Support local artisans and craftsmen
-- Participate in cultural workshops
-- Follow eco-friendly travel practices
-- Spread awareness and educate others
+### ℹ️ Data Source Information
+All datasets have been curated from official resources like [data.gov.in](https://data.gov.in), Ministry of Tourism, and the Archaeological Survey of India.
 """)
-

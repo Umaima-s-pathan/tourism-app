@@ -88,8 +88,8 @@ if not monthly_df.empty:
   title='Monthly Tourist Trends Across Regions')
   st.plotly_chart(fig2, use_container_width=True)
 
-# ----------------- Map ----------------
-with st.container():
+# ----------------- Map ------------------
+from streamlit_folium import folium_static
 st.write("### Cultural Hotspot Map")
 map_df = load_data_from_snowflake("SELECT PLACE, STATE, LATITUDE, LONGITUDE FROM HOTSPOT_LOCATIONS")
 if not map_df.empty:
@@ -100,8 +100,7 @@ if not map_df.empty:
             popup=f"{row['PLACE']} ({row['STATE']})",
             tooltip=row['PLACE']
         ).add_to(m)
-    st_folium(m, width=700,height=90)
-
+    folium_static(m, width=700,height=500)
 # ----------------- Hidden Cultural Gems ------------------
 st.subheader("\U0001F3F0 Hidden Cultural Gems")
 hidden_gems = load_data_from_snowflake("SELECT PLACE, STATE, IMAGEURL, DESCRIPTION, CHALLENGES, UNTOUCHEDREASON FROM HIDDEN_GEMS")

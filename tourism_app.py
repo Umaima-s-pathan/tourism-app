@@ -56,7 +56,7 @@ selected_art = st.sidebar.selectbox("Select Art Form", ["All", "Kathakali", "Mad
 st.subheader("\U0001F3A8 Art & Culture Explorer")
 
 # Fetch data from Snowflake
-art_data = load_data_from_snowflake("SELECT ARTFORM, STATE, IMAGEURL, DESCRIPTION FROM ART_FORMS")
+art_data = load_data_from_snowflake("SELECT  STATE, ARTFORM, IMAGEURL, DESCRIPTION FROM ART_FORMS")
 
 if art_data.empty:
     st.warning("No data available for Art Forms.")

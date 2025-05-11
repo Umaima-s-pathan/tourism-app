@@ -7,13 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1nmB0GTK_9_A1fUk2Pzubf49OPtZeuE3k
 """
 
-!pip install streamlit
-!pip install plotly
-!pip install folium
-!pip install streamlit-folium
-!pip install geopandas
-!pip install geopy
-!pip install snowflake-connector-python
 
 import streamlit as st
 import pandas as pd
